@@ -11,7 +11,11 @@
 
 - name: add apache config file
   copy: src=lameapp.conf dest=/etc/httpd/conf.d/ 
-  notify: restart apache
+  register: result
+
+- name: restart apache
+  service: name={{ apache_service }} state=restarted
+  when: result|changed
 
 - name: check for proper response
   uri: url=http://localhost return_content=yes
