@@ -8,3 +8,5 @@ users:
   - comment: Mary Travers
     username: mary
     password: $6$rounds=100000$O6bL5gy9WYaBLR1N$fmVJtjiZBKzKc7bwmIoEXtjgUVZr92bwyk20G/qeT5qERjHwtJiBbO98.yE9XNRDDSvWtHg8orJ/KjX0cdtml1
+
+lameapp_version: 1.1

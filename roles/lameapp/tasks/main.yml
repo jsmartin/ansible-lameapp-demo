@@ -16,6 +16,6 @@
 - name: check for proper response
   uri: url=http://localhost return_content=yes
   register: result
-#  until: '"Hello Moon" in result.content'
-#  retries: 10
-#  delay: 1
+  until: '"Hello Moon" in result.content'
+  retries: 10
+  delay: 1
