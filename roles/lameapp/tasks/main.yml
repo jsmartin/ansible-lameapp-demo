@@ -1,0 +1,21 @@
+---
+# tasks file for lameapp
+
+- name: checkout lameapp
+  git: repo=https://github.com/jsmartin/lameapp.git
+       dest=/var/www/lameapp
+       version={{ lameapp_version }}
+
+- name: set permissions on app
+  file: name=/var/www/lameapp/lame.py mode=0755
+
+- name: add apache config file
+  copy: src=lameapp.conf dest=/etc/httpd/conf.d/ 
+  notify: restart apache
+
+- name: check for proper response
+  uri: url=http://localhost return_content=yes
+  register: result
+#  until: '"Hello Moon" in result.content'
+#  retries: 10
+#  delay: 1

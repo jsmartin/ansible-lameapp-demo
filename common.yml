@@ -1,0 +1,7 @@
+---
+- hosts: all
+  name: Sets up common role on all servers
+  sudo: yes
+
+  roles:
+  - common

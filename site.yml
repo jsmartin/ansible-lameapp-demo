@@ -1,0 +1,4 @@
+---
+- include: common.yml
+- include: app.yml
+- include: haproxy.yml

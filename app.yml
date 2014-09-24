@@ -1,0 +1,7 @@
+---
+- hosts: web
+  name: Confiures apache on all the app servers
+  sudo: yes
+
+  roles:
+  - lameapp
